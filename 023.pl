@@ -3,7 +3,8 @@
 use strict;
 use warnings;
 
-my ($max, $smallestAbundant) = (28123, 12);
+# my ($max, $smallestAbundant) = (28123, 12);
+my ($max, $smallestAbundant) = (20161, 12); # per forum posts, number is 20161
 my @abundantNumbers = ();
 
 # >0 for abundant, 0 for perfect, <0 for deficient
