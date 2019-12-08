@@ -2,10 +2,14 @@
 package libeuler;
 
 use base 'Exporter';
-our @EXPORT = ('is_permutation', 'is_palindrome', 'convertDecToBase');
+our @EXPORT = ('is_working', 'is_permutation', 'is_palindrome', 'convertDecToBase', 'is_pandigital');
 
 use strict;
 use warnings;
+
+sub is_working {
+	return "OK";
+}
 
 sub is_permutation {
 	my $fir = join('', sort split(//, $_[0]));
@@ -19,7 +23,7 @@ sub is_palindrome {
 
 sub convertDecToBase {
 	my ($num, $base) = @_;
-	my @baseValues = qw/0 1 2 3 4 5 6 7 8 9 A B C D E F/;
+	my @baseValues = qw(0 1 2 3 4 5 6 7 8 9 A B C D E F);
 	my $numInNewBase = "";
 
 	if ($num == 0) {
@@ -31,6 +35,15 @@ sub convertDecToBase {
 		}
 	}
 	return $numInNewBase;
+}
+
+sub is_pandigital {
+	my ($digit, $n_digit) = @_;
+	my $is_pandigital = 1;
+	for (my $i = 1 ; $is_pandigital && $i<=$n_digit ; $i++) {
+		$is_pandigital = $digit =~ /$i/;
+	}
+	return $is_pandigital;
 }
 
 1;
