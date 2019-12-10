@@ -8,7 +8,7 @@ use strict;
 use warnings;
 
 sub is_working {
-	return "OK";
+	return 1;
 }
 
 sub is_permutation {
