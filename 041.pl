@@ -1,5 +1,4 @@
 #!/usr/bin/perl
-# Not at all optimised, truns in about 90 seconds on my computer
 
 use strict;
 use warnings;
