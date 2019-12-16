@@ -2,7 +2,7 @@
 package libeuler;
 
 use base 'Exporter';
-our @EXPORT = ('is_working', 'is_permutation', 'is_palindrome', 'convertDecToBase', 'is_pandigital');
+our @EXPORT = ('is_working', 'is_permutation', 'is_palindrome', 'convertDecToBase', 'is_pandigital', 'is_triangular', 'is_pentagonal', 'is_hexagonal');
 
 use strict;
 use warnings;
@@ -44,6 +44,25 @@ sub is_pandigital {
 		$is_pandigital = $digit =~ /$i/;
 	}
 	return $is_pandigital;
+}
+
+sub is_triangular {
+}
+
+sub is_pentagonal {
+	my $Pn = shift @_;
+	my $n = ((1+(sqrt(1+(12*2*$Pn))))/6);
+	my $retVal = 0;
+	if ($n =~ /^\d+$/) {$retVal = 1;}
+	return $retVal;
+}
+
+sub is_hexagonal {
+	my $Hn = shift @_;
+	my $n = (1+sqrt(1+(8*$Hn)))/4;
+	my $retVal = 0;
+	if ($n =~ /^\d+$/) {$retVal = 1;}
+	return $retVal;
 }
 
 1;
