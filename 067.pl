@@ -10,6 +10,8 @@ open TRIFILE, "< ".$fileName;
 
 my $triLine = 0;
 while (<TRIFILE>) {
+	chomp;
+	next if (/^$/);
 	my @lineElements = split /\s+/, $_;
 	my $triColumn = 0;
 	foreach my $num (@lineElements) {
